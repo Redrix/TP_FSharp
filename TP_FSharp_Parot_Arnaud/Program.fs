@@ -186,17 +186,20 @@ let incrementTodaysCount(jours: int[]): int[] =
     jours[jours.Length - 1] <- jours[jours.Length - 1] + 1
     jours
 
-//let oddWeek(week: int[]): bool =
+let oddWeek(week: int[]): bool =
+    match week with
+    | y when (y[1] = 0 && y[3] = 0 && y[5] = 0) -> true
+    | y when (y[1] = 10 && y[3] = 10 && y[5] = 10) -> true
+    | y when (y[0] = 5 && y[2] = 5 && y[4] = 5 && y[6] = 5) -> true
+    | _ -> false
         
-        
-
 visitesHier [|3; 5; 0; 7; 4; 1|] |> printfn "%i"
 total [|3; 5; 0; 7; 4; 1|] |> printfn "%i"
 joursSansVisite [|3; 5; 0; 7; 4; 1|] |> printfn "%b"
 let birdCount = [|3; 5; 0; 7; 4; 1|]
 incrementTodaysCount birdCount |> printfn "%A"
-//oddWeek [|1; 0; 5; 0; 12; 0; 2|] |> printfn "%A"
-//oddWeek [|5; 0; 5; 12; 5; 3; 5|] |> printfn "%A"
+oddWeek [|1; 0; 5; 0; 12; 0; 2|] |> printfn "%A"
+oddWeek [|5; 0; 5; 12; 5; 3; 5|] |> printfn "%A"
 
 
 // Partie B :
