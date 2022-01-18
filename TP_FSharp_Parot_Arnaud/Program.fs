@@ -60,6 +60,8 @@ message "[WARNING] : Disque presque plein" |> printfn "%s"
 logLevel "[ERREUR] : Opération invalide" |> printfn "%s"
 reformat "[INFO] : Opération terminée" |> printfn "%s"
 
+// Partie B :
+
 let talkToBOB(paroles: string) : string =
     match paroles with
     | y when (paroles.IndexOf('?') > 0 && Regex.Match(paroles, "[a-z]").Success) -> "Bien sûr"
@@ -177,3 +179,20 @@ printApprobation(rateActivity (Film Romance)) |> printfn "%s"
 
 // Exo 4 :
 
+let lastWeek = [|0; 2; 5; 3; 7; 8; 4|]
+
+let visitesHier(lastWeek: int[]): int =
+    lastWeek[lastWeek.Length - 2]
+
+let total(customers: int[]): int =
+    Array.sum(customers)
+
+let joursSansVisite(jours: int[]): bool =
+    jours |> Array.exists(fun single -> single = 0)
+
+let incrementTodaysCount(jours: int[]): int[] =
+    jours[jours.Length - 1] = jours[jours.Length -1] + 1
+
+visitesHier [|3; 5; 0; 7; 4; 1|] |> printfn "%i"
+total [|3; 5; 0; 7; 4; 1|] |> printfn "%i"
+joursSansVisite [|3; 5; 0; 7; 4; 1|] |> printfn "%b"
