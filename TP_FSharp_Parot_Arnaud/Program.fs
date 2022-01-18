@@ -24,13 +24,16 @@ let interest (balance: decimal): decimal = // implementer ici
 let annualBalanceUpdate(balance: decimal): decimal = // Implémenter
    balance + interest(balance)
 
-//let amountToDonate(balance: decimal) (taxFreePercentage: float): int =
-    
+let amountToDonate(balance: decimal) (taxFreePercentage: float): int =
+    Convert.ToInt32(Math.Round((balance * decimal ((taxFreePercentage / 100.0) * 2.0)), MidpointRounding.ToNegativeInfinity))
 
 interestRate 200.75m |> printfn "%f"
 interest 200.75m |> printfn "%f"
 annualBalanceUpdate 200.75m |> printfn "%f"
-
+let solde = 550.5m
+let taxFreePercentage = 2.5
+amountToDonate solde taxFreePercentage |> printfn "%i"
+(*
 //-----------------------------------------------------------------------------------------------------------------
 
 // Exo 2 :
@@ -223,3 +226,4 @@ addLanguage "TypeScript" ["JavaScript" ; "CoffeeScript"] |> printfn "%A"
 countLanguages ["C#" ; "Racket" ; "Rust" ; "Ruby"] |> printfn "%A"
 reverseList ["Prolog" ; "C" ; "Idris" ; "Assembly"] |> printfn "%A"
 excitingList ["Nim" ; "F#"] |> printfn "%A"
+*)
