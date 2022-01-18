@@ -178,7 +178,7 @@ printApprobation(rateActivity (Film Romance)) |> printfn "%s"
 //----------------------------------------------------------------------------------------------------
 
 // Exo 4 :
-
+(*
 let lastWeek = [|0; 2; 5; 3; 7; 8; 4|]
 
 let visitesHier(lastWeek: int[]): int =
@@ -195,6 +195,8 @@ let incrementTodaysCount(jours: int[]): int[] =
     jours
 
 let oddWeek(week: int[]): bool =
+    let zero a = a = 0
+    week. |> Array.IndexOf zero week
     match week with
     | 
     | _ -> false
@@ -204,3 +206,34 @@ total [|3; 5; 0; 7; 4; 1|] |> printfn "%i"
 joursSansVisite [|3; 5; 0; 7; 4; 1|] |> printfn "%b"
 let birdCount = [|3; 5; 0; 7; 4; 1|]
 incrementTodaysCount birdCount |> printfn "%A"
+oddWeek [| 1 ; 0 ; 5 ; 0 ; 12 ; 0 ; 2 |] |> printfn "%A"
+oddWeek [| 5 ; 0 ; 5 ; 12 ; 5 ; 3 ; 5|] |> printfn "%A"
+*)
+
+// Partie B :
+
+let newList(): List<_> =
+    []
+
+let existingList(): List<String> =
+    ["F#" ; "Clojure" ; "Haskell"]
+
+let addLanguage(newLanguage: String)(list: List<String>): List<String> =
+    newLanguage::list
+
+let countLanguages(list: List<String>): int =
+    list.Length
+
+let reverseList(theList: List<String>): List<String> =
+    theList |> List.rev
+
+let excitingList(theList: List<String>): bool =
+    match theList with
+    | y when (y[0] = "F#") -> true
+    | y when (y[1] = "F#" && y.Length <= 3) -> true
+    | _ -> false
+
+addLanguage "TypeScript" ["JavaScript" ; "CoffeeScript"] |> printfn "%A"
+countLanguages ["C#" ; "Racket" ; "Rust" ; "Ruby"] |> printfn "%A"
+reverseList ["Prolog" ; "C" ; "Idris" ; "Assembly"] |> printfn "%A"
+excitingList ["Nim" ; "F#"] |> printfn "%A"
