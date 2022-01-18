@@ -191,8 +191,16 @@ let joursSansVisite(jours: int[]): bool =
     jours |> Array.exists(fun single -> single = 0)
 
 let incrementTodaysCount(jours: int[]): int[] =
-    jours[jours.Length - 1] = jours[jours.Length -1] + 1
+    jours[jours.Length - 1] <- jours[jours.Length - 1] + 1
+    jours
+
+let oddWeek(week: int[]): bool =
+    match week with
+    | 
+    | _ -> false
 
 visitesHier [|3; 5; 0; 7; 4; 1|] |> printfn "%i"
 total [|3; 5; 0; 7; 4; 1|] |> printfn "%i"
 joursSansVisite [|3; 5; 0; 7; 4; 1|] |> printfn "%b"
+let birdCount = [|3; 5; 0; 7; 4; 1|]
+incrementTodaysCount birdCount |> printfn "%A"
