@@ -33,7 +33,7 @@ annualBalanceUpdate 200.75m |> printfn "%f"
 let solde = 550.5m
 let taxFreePercentage = 2.5
 amountToDonate solde taxFreePercentage |> printfn "%i"
-(*
+
 //-----------------------------------------------------------------------------------------------------------------
 
 // Exo 2 :
@@ -226,4 +226,3 @@ addLanguage "TypeScript" ["JavaScript" ; "CoffeeScript"] |> printfn "%A"
 countLanguages ["C#" ; "Racket" ; "Rust" ; "Ruby"] |> printfn "%A"
 reverseList ["Prolog" ; "C" ; "Idris" ; "Assembly"] |> printfn "%A"
 excitingList ["Nim" ; "F#"] |> printfn "%A"
-*)
