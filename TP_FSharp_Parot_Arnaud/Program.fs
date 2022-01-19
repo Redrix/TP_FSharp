@@ -62,7 +62,7 @@ let talkToBOB(paroles: string) : string =
     match paroles with
     | y when (paroles.IndexOf('?') > 0 && Regex.Match(paroles, "[a-z]").Success) -> "Bien sûr"
     | y when (paroles.IndexOf('?') < 0 && Regex.Match(paroles, "^[A-Z]+$").Success) -> "Whoa, calme-toi !"
-    | y when (paroles.IndexOf('?') > 0 && Regex.Match(paroles, "[A-Z]").Success) -> "Calme-toi, je sais ce que je fais"
+    | y when (paroles.IndexOf('?') > 0 && Regex.Match(paroles, "^[A-Z]+$?").Success) -> "Calme-toi, je sais ce que je fais"
     | y when (paroles = "") -> "Très bien. Sois comme ça"
     | _ -> "Peu importe"
 
